@@ -48,6 +48,7 @@ _testmain.go
 /cred
 /data
 run.sh
+build.sh
 indexapi
 app
 docker-compose.yml
