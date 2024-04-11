@@ -110,7 +110,7 @@ func main() {
 				todayLimit = rateLimitDayInt
 			}
 
-			fmt.Println("Sending URL to Index API:", url)
+			fmt.Printf("%s %s", time.Now(), url)
 
 			notification := indexing.UrlNotification{
 				Type: "URL_UPDATED",
