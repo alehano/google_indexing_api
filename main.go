@@ -95,7 +95,7 @@ func main() {
 	// Correct day limit
 	todayLimit := rateLimitDayInt - todayAlreadySent
 
-	fmt.Printf("Today's limit: %d\n", rateLimitDayInt)
+	fmt.Printf("Today's limit: %d\n", todayLimit)
 
 	count := 0
 	// Send URLs to Google Index API
