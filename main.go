@@ -93,7 +93,7 @@ func main() {
 	}
 
 	// Correct day limit
-	rateLimitDayInt -= todayAlreadySent
+	todayLimit := rateLimitDayInt - todayAlreadySent
 
 	fmt.Printf("Today's limit: %d\n", rateLimitDayInt)
 
@@ -102,11 +102,12 @@ func main() {
 	for _, url := range urls {
 		if !contains(indexedUrls, url) && !contains(sentUrls, url) {
 			count++
-			if count > rateLimitDayInt {
+			if count > todayLimit {
 				// Sleep for a day
 				fmt.Println("Sleeping for a 24 hours...")
 				time.Sleep(24 * time.Hour)
 				count = 0
+				todayLimit = rateLimitDayInt
 			}
 
 			fmt.Println("Sending URL to Index API:", url)
